@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Username Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87CEEB, #b3e0ff); /* Light sky background */
+            position: relative;
+        }
+
+        /* Audio Element */
+        audio {
+            display: none; /* Hide the audio element */
+        }
+
+        /* Cloud Images */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .cloud1 {
+            width: 100px;
+            height: 60px;
+            top: 20%;
+            left: -100px;
+            animation: float 8s linear infinite;
+        }
+
+        .cloud2 {
+            width: 120px;
+            height: 70px;
+            top: 40%;
+            left: -150px;
+            animation: float 7s linear infinite;
+        }
+
+        .cloud3 {
+            width: 90px;
+            height: 50px;
+            top: 60%;
+            left: -80px;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em; /* Adjusted font size */
+            background: linear-gradient(to right, #4CAF50, #8BC34A); /* Gradient background */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            margin-bottom: 20px;
+            position: relative; /* Relative positioning for stacking context */
+            z-index: 1; /* Ensure title is above the clouds */
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1; /* Ensure form is above clouds */
+            width: 300px; /* Fixed width for form */
+        }
+
+        label {
+            margin: 10px 0 5px;
+            display: block;
+            font-size: 1.1em; /* Slightly larger font size */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em; /* Increased font size */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%; /* Full width for button */
+            font-size: 1.1em; /* Slightly larger font size */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .socials {
+            margin-top: 20px;
+            font-size: 0.9em; /* Smaller font size */
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Element -->
+    <audio id="background-audio" loop>
+        <source src="gg.mp3" type="audio/mpeg"> <!-- Ensure you have this audio file in the same directory -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Cloud Images from URL -->
+    <img src="ggg.png" class="cloud cloud1" alt="Cloud"> <!-- Replace with the actual URL of the first cloud image -->
+    <img src="ggg.png" class="cloud cloud2" alt="Cloud"> <!-- Replace with the actual URL of the second cloud image -->
+    <img src="ggg.png" class="cloud cloud3" alt="Cloud"> <!-- Replace with the actual URL of the third cloud image -->
+
+    <h1>Submit Your Social Media Usernames</h1>
+    <form action="https://formspree.io/f/mnnqalgd" method="POST">
+        <label for="tiktok">TikTok Username:</label>
+        <input type="text" id="tiktok" name="tiktok" required>
+
+        <label for="instagram">Instagram Username:</label>
+        <input type="text" id="instagram" name="instagram" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="socials">
+        <p>Follow me on:</p>
+        <p>Instagram: <strong>itsyoboijadee</strong></p>
+        <p>TikTok: <strong>_alwaystiredofanything</strong></p>
+    </div>
+
+    <script>
+        // Show a notification on form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function() {
+            alert('Your message has been sent!');
+        });
+
+        // Play audio when typing in the TikTok username field
+        const tiktokInput = document.getElementById('tiktok');
+        const backgroundAudio = document.getElementById('background-audio');
+
+        tiktokInput.addEventListener('focus', function() {
+            backgroundAudio.play(); // Play the audio when the input is focused
+        });
+    </script>
+</body>
+</html>
